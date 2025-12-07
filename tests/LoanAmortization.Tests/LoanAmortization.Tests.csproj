@@ -20,6 +20,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\..\src\LoanAmortization.Functions\LoanAmortization_Functions.csproj" />
+    <ProjectReference Include="..\..\src\LoanAmortization.Domain\LoanAmortization.Domain.csproj" />
   </ItemGroup>
 
 </Project>

@@ -4,7 +4,7 @@ namespace LoanAmortization.Domain.Services;
 
 public sealed class LoanCalculator
 {
-    public static IReadOnlyList<PaymentScheduleItem> CalculateSchedule(
+    public IReadOnlyList<PaymentScheduleItem> CalculateSchedule(
         decimal principal,
         decimal annualInterestRate,
         DateTime startDate,
