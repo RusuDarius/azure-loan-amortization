@@ -1,4 +1,4 @@
-Microsoft Visual Studio Solution File, Format Version 12.00
+﻿Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.5.2.0
 MinimumVisualStudioVersion = 10.0.40219.1
@@ -9,6 +9,12 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LoanAmortization_Functions", "src\LoanAmortization.Functions\LoanAmortization_Functions.csproj", "{A3A01312-5950-3CB8-E925-5AFF09761703}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LoanAmortization.Tests", "tests\LoanAmortization.Tests\LoanAmortization.Tests.csproj", "{2455F51D-E05B-C8D9-A7BE-4214D56B9544}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LoanAmortization.Application", "src\LoanAmortization.Application\LoanAmortization.Application.csproj", "{2D429D98-73E7-4E26-9F95-961E057C46D9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LoanAmortization.Domain", "src\LoanAmortization.Domain\LoanAmortization.Domain.csproj", "{13F1CA16-5699-4C13-A59C-F6765923877B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LoanAmortization.Infrastructure", "src\LoanAmortization.Infrastructure\LoanAmortization.Infrastructure.csproj", "{000061FD-08E3-41F5-B4C2-167AFE018C16}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -24,6 +30,18 @@ Global
 		{2455F51D-E05B-C8D9-A7BE-4214D56B9544}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2455F51D-E05B-C8D9-A7BE-4214D56B9544}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2455F51D-E05B-C8D9-A7BE-4214D56B9544}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2D429D98-73E7-4E26-9F95-961E057C46D9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2D429D98-73E7-4E26-9F95-961E057C46D9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2D429D98-73E7-4E26-9F95-961E057C46D9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2D429D98-73E7-4E26-9F95-961E057C46D9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{13F1CA16-5699-4C13-A59C-F6765923877B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{13F1CA16-5699-4C13-A59C-F6765923877B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{13F1CA16-5699-4C13-A59C-F6765923877B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{13F1CA16-5699-4C13-A59C-F6765923877B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{000061FD-08E3-41F5-B4C2-167AFE018C16}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{000061FD-08E3-41F5-B4C2-167AFE018C16}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{000061FD-08E3-41F5-B4C2-167AFE018C16}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{000061FD-08E3-41F5-B4C2-167AFE018C16}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -31,6 +49,9 @@ Global
 	GlobalSection(NestedProjects) = preSolution
 		{A3A01312-5950-3CB8-E925-5AFF09761703} = {827E0CD3-B72D-47B6-A68D-7590B98EB39B}
 		{2455F51D-E05B-C8D9-A7BE-4214D56B9544} = {0AB3BF05-4346-4AA6-1389-037BE0695223}
+		{2D429D98-73E7-4E26-9F95-961E057C46D9} = {827E0CD3-B72D-47B6-A68D-7590B98EB39B}
+		{13F1CA16-5699-4C13-A59C-F6765923877B} = {827E0CD3-B72D-47B6-A68D-7590B98EB39B}
+		{000061FD-08E3-41F5-B4C2-167AFE018C16} = {827E0CD3-B72D-47B6-A68D-7590B98EB39B}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {1D2BC1A4-C2E9-4E04-8A1E-A12B8874CF70}
