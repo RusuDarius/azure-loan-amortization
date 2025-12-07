@@ -1,14 +1,29 @@
+using LoanAmortization.Application.Commands.CalculateAmortization;
+using LoanAmortization.Application.Interfaces;
+using LoanAmortization.Domain.Services;
+using LoanAmortization.Functions.Services;
 using Microsoft.Azure.Functions.Worker;
-using Microsoft.Azure.Functions.Worker.Builder;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 
-var builder = FunctionsApplication.CreateBuilder(args);
+namespace LoanAmortization.Functions.Program;
 
-builder.ConfigureFunctionsWebApplication();
+public class Program
+{
+    public static void Main()
+    {
+        var host = new HostBuilder()
+            .ConfigureServices(services =>
+            {
+                services.AddApplicationInsightsTelemetryWorkerService();
+                services.ConfigureFunctionsApplicationInsights();
+                
+                services.AddSingleton<LoanCalculator>();
+                services.AddSingleton<IInterestRateProvider, FixedInterestRateProvider>();
+                services.AddSingleton<CalculateAmortizationHandler>();
+            })
+            .Build();
 
-builder
-    .Services.AddApplicationInsightsTelemetryWorkerService()
-    .ConfigureFunctionsApplicationInsights();
-
-builder.Build().Run();
+        host.Run();
+    }
+}
