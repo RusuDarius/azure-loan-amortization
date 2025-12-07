@@ -11,7 +11,7 @@ public class LoanCalculatorTests
         var calculator = new LoanCalculator();
 
         var result = calculator.CalculateSchedule(
-            principal: 50_000m,
+            principalLoanAmount: 50_000m,
             annualInterestRate: 0.05m,
             startDate: new DateTime(2025, 01, 01),
             numberOfYears: 5);
@@ -26,7 +26,7 @@ public class LoanCalculatorTests
         var start = new DateTime(2025, 02, 15);
 
         var schedule = calculator.CalculateSchedule(
-            principal: 10_000m,
+            principalLoanAmount: 10_000m,
             annualInterestRate: 0.05m,
             startDate: start,
             numberOfYears: 1);
@@ -40,7 +40,7 @@ public class LoanCalculatorTests
         var calculator = new LoanCalculator();
         
         var schedule = calculator.CalculateSchedule(
-            principal: 100_000m,
+            principalLoanAmount: 100_000m,
             annualInterestRate: 0.05m,
             startDate: new DateTime(2025, 01, 01),
             numberOfYears: 2);
