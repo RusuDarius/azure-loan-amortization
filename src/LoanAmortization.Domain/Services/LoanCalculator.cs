@@ -5,7 +5,7 @@ namespace LoanAmortization.Domain.Services;
 // 0.0041 - monthly rate
 // 120 total months
 // 1000$
-// 1000 * 0.0041 / (1 - (1 + 0.0041)^(-120)) = 10.41$
+// 1000 * 0.0041666666666667 / (1 - (1 + 0.0041666666666667)^(-120)) = 10.61$
 public sealed class LoanCalculator
 {
     public IReadOnlyList<PaymentScheduleItem> CalculateSchedule(

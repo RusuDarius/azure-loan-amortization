@@ -13,6 +13,7 @@ public class Program
     public static void Main()
     {
         var host = new HostBuilder()
+            .ConfigureFunctionsWorkerDefaults()
             .ConfigureServices(services =>
             {
                 services.AddApplicationInsightsTelemetryWorkerService();
