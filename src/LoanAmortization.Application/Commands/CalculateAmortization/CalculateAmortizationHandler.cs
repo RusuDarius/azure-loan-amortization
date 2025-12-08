@@ -32,7 +32,6 @@ public sealed class CalculateAmortizationHandler
     decimal annualInterestRate;
     try
     {
-      //TODO
       annualInterestRate = await _interestRateProvider.GetAnnualInterestRateAsync(cancellationToken);
 
       if(annualInterestRate <= 0)
@@ -48,7 +47,7 @@ public sealed class CalculateAmortizationHandler
 
     IReadOnlyList<PaymentScheduleItem> paymentSchedule = 
       _loanCalculator.CalculateSchedule(
-        principalLoanAmount: command.TotalAmount, 
+        principalLoanAmount: command.TotalSum, 
         annualInterestRate: annualInterestRate,
         startDate: command.StartDate,
         numberOfYears: command.NumberOfYears
@@ -71,9 +70,9 @@ public sealed class CalculateAmortizationHandler
 #region Helper Methods
   private static void ValidateCommand(CalculateAmortizationCommand command, CalculateAmortizationResult result)
   {
-    if (command.TotalAmount <= 0)
+    if (command.TotalSum <= 0)
     {
-      result.Errors.Add(new ValidationError { ErrorField = nameof(command.TotalAmount), ErrorMessage = "Total amount must be greater than 0" });
+      result.Errors.Add(new ValidationError { ErrorField = nameof(command.TotalSum), ErrorMessage = "Total sum must be greater than 0" });
     }
 
     if (command.StartDate == default)

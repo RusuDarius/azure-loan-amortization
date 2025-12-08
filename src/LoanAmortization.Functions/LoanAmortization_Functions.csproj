@@ -9,6 +9,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="Azure.Data.Tables" Version="12.11.0" />
     <PackageReference Include="Microsoft.ApplicationInsights.WorkerService" Version="2.23.0" />
     <PackageReference Include="Microsoft.Azure.Functions.Worker" Version="2.50.0" />
     <PackageReference Include="Microsoft.Azure.Functions.Worker.ApplicationInsights" Version="2.50.0" />
@@ -19,6 +20,7 @@
   <ItemGroup>
     <ProjectReference Include="..\LoanAmortization.Application\LoanAmortization.Application.csproj" />
     <ProjectReference Include="..\LoanAmortization.Domain\LoanAmortization.Domain.csproj" />
+    <ProjectReference Include="..\LoanAmortization.Infrastructure\LoanAmortization.Infrastructure.csproj" />
   </ItemGroup>
 
 </Project>

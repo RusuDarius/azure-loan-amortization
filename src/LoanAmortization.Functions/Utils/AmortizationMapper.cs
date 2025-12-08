@@ -9,7 +9,7 @@ internal static class AmortizationMapper
     internal static CalculateAmortizationCommand ToCommand(CalculateAmortizationRequest request) =>
         new()
         {
-            TotalAmount = request.TotalAmount,
+            TotalSum = request.TotalSum,
             StartDate = request.StartDate,
             NumberOfYears = request.NumberOfYears,
         };
