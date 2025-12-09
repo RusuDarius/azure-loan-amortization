@@ -1,12 +1,8 @@
-using Azure.Data.Tables;
-using LoanAmortization.Application.Commands.CalculateAmortization;
-using LoanAmortization.Application.Interfaces;
-using LoanAmortization.Domain.Services;
-using LoanAmortization.Infrastructure.InterestRate;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Azure.Functions.Worker;
+using LoanAmortization.Functions.Extensions;
 
 namespace LoanAmortization.Functions.Program;
 
@@ -26,23 +22,8 @@ public class Program
                 services.AddApplicationInsightsTelemetryWorkerService();
                 services.ConfigureFunctionsApplicationInsights();
 
-                services.AddSingleton<LoanCalculator>();
-                services.AddSingleton<IInterestRateProvider>(sp =>
-                {
-                    var configuration = sp.GetRequiredService<IConfiguration>();
-
-                    var connectionString = configuration["Storage:ConnectionString"] 
-                        ?? configuration["AzureWebJobsStorage"];
-                    
-                    var tableName = configuration["Storage:InterestRateTableName"];
-
-                    var tableClient = new TableClient(connectionString, tableName);
-                    tableClient.CreateIfNotExists();
-
-                    return new TableInterestRateProvider(tableClient);
-                });
-
-                services.AddSingleton<CalculateAmortizationHandler>();
+                services.AddApplicationServices();
+                services.AddInfrastructureServices(context.Configuration);
             })
             .Build();
 
