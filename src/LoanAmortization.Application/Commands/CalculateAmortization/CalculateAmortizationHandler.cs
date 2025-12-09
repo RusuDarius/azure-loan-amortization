@@ -8,8 +8,6 @@ public sealed class CalculateAmortizationHandler
 {
   private readonly LoanCalculator _loanCalculator;
   private readonly IInterestRateProvider _interestRateProvider;
-
-  // The 5% requirement for annual interest rate
   private const decimal DefaultInterestRate = 0.05m;
 
   public CalculateAmortizationHandler(LoanCalculator loanCalculator, IInterestRateProvider interestRateProvider)

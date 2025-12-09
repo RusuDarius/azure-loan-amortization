@@ -30,10 +30,7 @@ public sealed class StorageSeeder : IStorageSeeder
         rowKey: "Default",
         cancellationToken: cancellationToken);
     }
-    catch (RequestFailedException)
-    {
-
-    }
+    catch (RequestFailedException) {}
 
     await _tableClient.AddEntityAsync(interestRateEntity, cancellationToken);
   }
