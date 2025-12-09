@@ -3,6 +3,7 @@ using LoanAmortization.Application.Commands.CalculateAmortization;
 using LoanAmortization.Application.Interfaces;
 using LoanAmortization.Domain.Services;
 using LoanAmortization.Infrastructure.InterestRate;
+using LoanAmortization.Infrastructure.Seeding;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 
@@ -26,6 +27,7 @@ public static class ServiceCollectionExtensions
     tableClient.CreateIfNotExists();
 
     services.AddSingleton<IInterestRateProvider>(new TableInterestRateProvider(tableClient));
+    services.AddSingleton<IStorageSeeder>(sp => new StorageSeeder(tableClient));
 
     return services;
   }

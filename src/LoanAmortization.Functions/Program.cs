@@ -3,12 +3,13 @@ using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Azure.Functions.Worker;
 using LoanAmortization.Functions.Extensions;
+using LoanAmortization.Infrastructure.Seeding;
 
 namespace LoanAmortization.Functions.Program;
 
 public class Program
 {
-    public static void Main()
+    public static async Task Main()
     {
         var host = new HostBuilder()
             .ConfigureFunctionsWorkerDefaults()
@@ -27,6 +28,7 @@ public class Program
             })
             .Build();
 
+        await host.Services.GetRequiredService<IStorageSeeder>().SeedAsync();
         host.Run();
     }
 }
